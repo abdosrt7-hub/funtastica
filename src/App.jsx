@@ -447,7 +447,7 @@ function AttendanceSheet({ group, students, attendance, driveLinks, date, setDat
   if (!group) return null;
 
   const canManageStudents = currentUser.role === "admin";
-  const canEditLink = currentUser.role === "admin" || currentUser.role === "group_coach";
+  const canEditLink = currentUser.role === "admin";
   const recordFor = (studentId) => attendance.find((a) => a.studentId === studentId && a.date === date);
   const weekKey = getWeekKey(date);
   const weekLink = driveLinks.find((l) => l.groupId === group.id && l.weekKey === weekKey);
